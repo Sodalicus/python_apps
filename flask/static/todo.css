@@ -1,0 +1,28 @@
+
+#task {
+    margin-top: 5px;
+    width: 400px;
+    height: 60px;
+    background: grey;
+    border-style: double;
+    border-color: black;
+    display: inline-block;
+    border-radius: 15px;
+}
+
+#checkbox {
+    margin-top: 5px;
+    width: 60px;
+    height: 60px;
+    background: grey;
+    border-style: double;
+    border-color: black;
+    display: inline-block;
+    vertical-align: bottom;
+    border-radius: 15px;
+}
+    
+input {
+    display: block;
+    margin: auto;
+}

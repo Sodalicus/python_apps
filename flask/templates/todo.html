@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" href='/static/style.css' />
+    </head>
+    <body>
+        <h1>To-do list:</h1>
+        <form method="post">
+        <div id="task">
+        <input type="text" name="new_task" />
+        </div></br>
+        {% for task in todo %}
+            <div id="task">
+            <label>
+            <p>
+            {{ task.text }}
+            </p>
+            
+            </label>
+            </div>
+
+            <div id="checkbox">
+            <input type="checkbox" id="cb_done" name="{{ todo.index(task) }}" value="done" />
+            <input type="checkbox" id="cb_delete" name="{{ todo.index(task) }}" value="delete" />
+            </div>
+            <br>
+        {% endfor %}
+        <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>

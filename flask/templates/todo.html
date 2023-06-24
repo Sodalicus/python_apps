@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <link rel="stylesheet" href='/static/style.css' />
+    <link rel="stylesheet" href='/static/todo.css' />
     </head>
     <body>
         <h1>To-do list:</h1>
         <form method="post">
-        <div id="task">
-        <input type="text" name="new_task" />
-        </div></br>
-        {% for task in todo %}
-            <div id="task">
-            <label>
-            <p>
-            {{ task.text }}
-            </p>
-            
-            </label>
-            </div>
+        <input type="text" name="new_task" /></ p>
+        <button type="submit">Add</button>
+        </form>
 
-            <div id="checkbox">
-            <input type="checkbox" id="cb_done" name="{{ todo.index(task) }}" value="done" />
-            <input type="checkbox" id="cb_delete" name="{{ todo.index(task) }}" value="delete" />
-            </div>
-            <br>
+        <form method="post">
+        <ul>
+        {% for task in todo %}
+            {% if task.done == True %}
+                <li class="done">
+            {% else %}
+                <li>
+            {% endif %}
+
+            {{ task.text }} 
+            <input type="checkbox" name="done" value="{{ task.id }}" title="done/undone"/>
+            <input type="checkbox" name="delete" value="{{ task.id }}" title="delete" />
+            </li>
+
+
         {% endfor %}
-        <button type="submit">Submit</button>
+        </ul>
+        <button type="submit">Update</button>
         </form>
     </body>
 </html>
